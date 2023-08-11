@@ -18,7 +18,7 @@ formel.addEventListener("submit", (e) => {
         },
         body: JSON.stringify(obj)
     }
-    fetch(`https://test-app-3ece.onrender.com/order/create`, options)
+    fetch(`https://zomatodbserverr.onrender.com/order/create`, options)
         .then(res => res.json())
         .then((data) => {
             console.log(data);

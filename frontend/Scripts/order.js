@@ -5,12 +5,8 @@ const formel=document.querySelector('form')
 
 formel.addEventListener('submit',(e)=>{
     e.preventDefault()
-    fetch("https://test-app-3ece.onrender.com/order/update",{
-        method:"PATCH",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({id:idinp.value,status:selectel.value})
+    fetch(`https://zomatodbserverr.onrender.com/order/update/${idinp.value}`,{
+        method:"PATCH"
     })
     .then((res)=>{
         return res.json()
@@ -47,12 +43,8 @@ function fetchAndRender(data) {
         let deletebutton=document.createElement('button')
         deletebutton.innerText="Delete"
         deletebutton.addEventListener('click',()=>{
-            fetch("https://test-app-3ece.onrender.com/order/delete",{
-                method:"DELETE",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:ele.id})
+            fetch(`https://test-app-3ece.onrender.com/order/delete/${ele.id}`,{
+                method:"DELETE"
             })
             .then((res)=>{
                 return res.json()

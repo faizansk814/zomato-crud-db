@@ -19,7 +19,7 @@ formele.addEventListener("submit", (e) => {
         },
         body: JSON.stringify(obj)
     }
-    fetch(`https://test-app-3ece.onrender.com/crud/create`, options)
+    fetch(`https://zomatodbserverr.onrender.com/crud/create`, options)
         .then(res => res.json())
         .then((data) => {
             console.log(data);

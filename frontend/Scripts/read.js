@@ -1,7 +1,7 @@
 const container = document.getElementById("append")
 
 function DisplayData() {
-    fetch(`https://test-app-3ece.onrender.com/crud/get`)
+    fetch(`https://zomatodbserverr.onrender.com/crud/get`)
         .then((res) => res.json())
         .then((data) => {
             fetchAndRender(data.data)
@@ -27,12 +27,8 @@ function fetchAndRender(data) {
         let updatebutton=document.createElement('button')
         updatebutton.innerText="Update"
         deletebutton.addEventListener('click',()=>{
-            fetch("https://test-app-3ece.onrender.com/crud/delete",{
-                method:"DELETE",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:ele.id})
+            fetch(`https://test-app-3ece.onrender.com/crud/delete/${ele.id}`,{
+                method:"DELETE"
             })
             .then((res)=>{
                 return res.json()
@@ -45,12 +41,8 @@ function fetchAndRender(data) {
             })
         })
         updatebutton.addEventListener('click',()=>{
-            fetch("https://test-app-3ece.onrender.com/crud/update",{
-                method:"PATCH",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:ele.id})
+            fetch(`https://test-app-3ece.onrender.com/crud/update/${ele.id}`,{
+                method:"PATCH"
             })
             .then((res)=>{
                 return res.json()

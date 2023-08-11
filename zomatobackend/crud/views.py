@@ -26,7 +26,7 @@ def Get(req):
 
 
 def Update(request, itemid):
-    itemid=int(itemid)
+    print(type(itemid))
     if request.method == "PATCH":
         menu = get_object_or_404(Menu, id=itemid)
         menu.available = "yes"

@@ -4,6 +4,6 @@ from . import views
 urlpatterns = [
     path('create',views.Create,name='create'),
     path('get',views.Get,name="get"),
-    path('update',views.Update,name='update'),
-    path('delete',views.Delete,name='delete')
+    path('update/<int:itemid>',views.Update,name='update'),
+    path('delete/<int:itemid>',views.Delete,name='delete')
 ]

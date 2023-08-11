@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Data Here</title>
+    <style>
+        .newdiv {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            background-color: aquamarine;
+            font-weight: 700;
+        }
+
+        #append {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" id="id">
+        <select name="" id="selectel">
+            <option value="">Change the status of orders</option>
+            <option value="pending">pending</option>
+            <option value="recieved">recieved</option>
+            <option value="preparing">preparing</option>
+            <option value="pickup">pickup</option>
+            <option value="deleivered">deleivered</option>
+        </select>
+        <input type="submit">
+    </form>
+    <div id="append"></div>
+</body>
+<script src="./Scripts/order.js"></script>
+
+</html>

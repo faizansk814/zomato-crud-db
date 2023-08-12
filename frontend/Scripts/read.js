@@ -27,7 +27,7 @@ function fetchAndRender(data) {
         let updatebutton=document.createElement('button')
         updatebutton.innerText="Update"
         deletebutton.addEventListener('click',()=>{
-            fetch(`https://test-app-3ece.onrender.com/crud/delete/${ele.id}`,{
+            fetch(`https://zomatodbserverr.onrender.com/crud/delete/${ele.id}`,{
                 method:"DELETE"
             })
             .then((res)=>{
@@ -37,11 +37,12 @@ function fetchAndRender(data) {
                 DisplayData()
             })
             .catch((err)=>{
+                alert(err)
                 console.log(err)
             })
         })
         updatebutton.addEventListener('click',()=>{
-            fetch(`https://test-app-3ece.onrender.com/crud/update/${ele.id}`,{
+            fetch(`https://zomatodbserverr.onrender.com/crud/update/${ele.id}`,{
                 method:"PATCH"
             })
             .then((res)=>{

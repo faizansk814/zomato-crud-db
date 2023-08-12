@@ -4,9 +4,16 @@ const selectel=document.getElementById('selectel')
 const formel=document.querySelector('form')
 
 formel.addEventListener('submit',(e)=>{
+    let obj={
+        status:selectel.value
+    }
     e.preventDefault()
     fetch(`https://zomatodbserverr.onrender.com/order/update/${idinp.value}`,{
-        method:"PATCH"
+        method:"PATCH",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(obj)
     })
     .then((res)=>{
         return res.json()
@@ -19,7 +26,7 @@ formel.addEventListener('submit',(e)=>{
     })
 })
 function DisplayData() {
-    fetch(`https://test-app-3ece.onrender.com/order/get`)
+    fetch(`https://zomatodbserverr.onrender.com/order/get`)
         .then((res) => res.json())
         .then((data) => {
             fetchAndRender(data.data)
@@ -35,15 +42,15 @@ function fetchAndRender(data) {
         let id = document.createElement("p")
         id.innerText = ` ID : ${ele.id}`
         let dishname = document.createElement('p')
-        dishname.innerText = ` DISHNAME : ${ele.food}`
+        dishname.innerText = ` DISHNAME : ${ele.foodname}`
         let price = document.createElement('p')
-        price.innerText = `Customername : ${ele.customername}`
+        price.innerText = `Customername : ${ele.name}`
         let available = document.createElement('p')
         available.innerText = `Status : ${ele.status}`
         let deletebutton=document.createElement('button')
         deletebutton.innerText="Delete"
         deletebutton.addEventListener('click',()=>{
-            fetch(`https://test-app-3ece.onrender.com/order/delete/${ele.id}`,{
+            fetch(`https://zomatodbserverr.onrender.com/order/delete/${ele.id}`,{
                 method:"DELETE"
             })
             .then((res)=>{

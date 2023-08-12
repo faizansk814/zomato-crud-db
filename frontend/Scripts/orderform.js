@@ -7,9 +7,8 @@ formel.addEventListener("submit", (e) => {
     e.preventDefault()
     const obj = {
         id: idinp.value,
-        food:foodinp.value,
-        customername:nameinp.value,
-        status:"pending"    
+        foodname:foodinp.value,
+        name:nameinp.value   
     }
     const options = {
         method: "POST",
